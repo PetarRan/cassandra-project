@@ -11,9 +11,9 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
- * Created by jt on 1/10/17.
+ * Entity Model
  */
-@Table("products")
+@Table("product")
 public class Product implements Serializable{
 
     @PrimaryKey
