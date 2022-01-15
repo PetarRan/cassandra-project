@@ -6,10 +6,14 @@
 	<groupId>guru.springframework</groupId>
 	<artifactId>spring-boot-cassandra</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>vaadin-frontend</module>
+        <module>vaadin-frontend</module>
+    </modules>
+	<packaging>pom</packaging>
 
 	<name>spring-boot-cassandra</name>
-	<description>Demo project for Spring Boot and cassandra</description>
+	<description>Project for Advanced Database Systems course</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -37,7 +41,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
