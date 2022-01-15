@@ -1,3 +1,3 @@
 # Cassandra-Project
 
-##Simple Web Souvernir-Shop Solution
+## Simple Web Souvernir-Shop Solution
