@@ -29,6 +29,9 @@ public class Product implements Serializable{
     private String description;
     private BigDecimal price;
     private String imageUrl;
+    private String city;
+    private String country;
+    private String continent;
 
     public Integer getId() {
         return id;
@@ -68,5 +71,29 @@ public class Product implements Serializable{
         this.id = new_id.getValue();
 
 
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getContinent() {
+        return continent;
+    }
+
+    public void setContinent(String continent) {
+        this.continent = continent;
     }
 }
