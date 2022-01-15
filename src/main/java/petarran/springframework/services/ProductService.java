@@ -13,11 +13,11 @@ public interface ProductService {
 
     List<Product> listAll();
 
-    Product getById(UUID id);
+    Product getById(Integer id);
 
     Product saveOrUpdate(Product product);
 
-    void delete(UUID id);
+    void delete(Integer id);
 
     Product saveOrUpdateProductForm(ProductForm productForm);
 }

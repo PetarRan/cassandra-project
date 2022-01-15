@@ -6,28 +6,31 @@ import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
 
+import javax.annotation.Generated;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Random;
 import java.util.UUID;
 
 /**
  * Entity Model
  */
-@Table("product")
+@Table("products")
 public class Product implements Serializable{
 
+    //TODO id sequence resenje Lukiano pls
     @PrimaryKey
     @CassandraType(type = DataType.Name.UUID)
-    private UUID id;
+    private Integer id;
     private String description;
     private BigDecimal price;
     private String imageUrl;
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -56,6 +59,6 @@ public class Product implements Serializable{
     }
 
     public Product() {
-        id = UUID.randomUUID();
+        this.id = new Random().nextInt();
     }
 }
