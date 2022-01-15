@@ -1,9 +1,9 @@
-package guru.springframework.controllers;
+package petarran.springframework.controllers;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.converters.ProductToProductForm;
-import guru.springframework.domain.Product;
-import guru.springframework.services.ProductService;
+import petarran.springframework.commands.ProductForm;
+import petarran.springframework.converters.ProductToProductForm;
+import petarran.springframework.domain_model.Product;
+import petarran.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

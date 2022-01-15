@@ -1,9 +1,9 @@
-package guru.springframework.services;
+package petarran.springframework.services;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.converters.ProductFormToProduct;
-import guru.springframework.domain.Product;
-import guru.springframework.repositories.ProductRepository;
+import petarran.springframework.commands.ProductForm;
+import petarran.springframework.converters.ProductFormToProduct;
+import petarran.springframework.domain_model.Product;
+import petarran.springframework.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> listAll() {
         List<Product> products = new ArrayList<>();
-        productRepository.findAll().forEach(products::add); //fun with Java 8
+        productRepository.findAll().forEach(products::add);
         return products;
     }
 

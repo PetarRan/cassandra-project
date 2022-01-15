@@ -1,4 +1,4 @@
-package guru.springframework.config;
+package petarran.springframework.config;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ import java.util.List;
 @Configuration
 public class CassandraConfig extends AbstractCassandraConfiguration {
 
-    public static final String KEYSPACE = "guru_keyspace";
+    public static final String KEYSPACE = "shop_keyspace";
 
     @Override
     public SchemaAction getSchemaAction() {
@@ -42,6 +42,6 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Override
     public String[] getEntityBasePackages() {
-        return new String[]{"guru.springframework.domain"};
+        return new String[]{"petarran.springframework.domain"};
     }
 }

@@ -1,7 +1,7 @@
-package guru.springframework.services;
+package petarran.springframework.services;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.domain.Product;
+import petarran.springframework.commands.ProductForm;
+import petarran.springframework.domain_model.Product;
 
 import java.util.List;
 import java.util.UUID;

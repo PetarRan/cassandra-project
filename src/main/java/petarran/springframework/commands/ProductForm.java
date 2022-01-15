@@ -1,23 +1,13 @@
-package guru.springframework.domain;
-
-import com.datastax.driver.core.DataType;
-import org.springframework.data.cassandra.core.mapping.CassandraType;
-import org.springframework.data.cassandra.core.mapping.PrimaryKey;
-import org.springframework.data.cassandra.core.mapping.Table;
+package petarran.springframework.commands;
 
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
 /**
  * Created by jt on 1/10/17.
  */
-@Table("products")
-public class Product implements Serializable{
-
-    @PrimaryKey
-    @CassandraType(type = DataType.Name.UUID)
+public class ProductForm {
     private UUID id;
     private String description;
     private BigDecimal price;
@@ -53,9 +43,5 @@ public class Product implements Serializable{
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public Product() {
-        id = UUID.randomUUID();
     }
 }

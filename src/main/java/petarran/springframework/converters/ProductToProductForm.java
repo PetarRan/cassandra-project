@@ -1,7 +1,7 @@
-package guru.springframework.converters;
+package petarran.springframework.converters;
 
-import guru.springframework.commands.ProductForm;
-import guru.springframework.domain.Product;
+import petarran.springframework.commands.ProductForm;
+import petarran.springframework.domain_model.Product;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

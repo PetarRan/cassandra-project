@@ -1,6 +1,6 @@
-package guru.springframework.repositories;
+package petarran.springframework.repositories;
 
-import guru.springframework.domain.Product;
+import petarran.springframework.domain_model.Product;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
