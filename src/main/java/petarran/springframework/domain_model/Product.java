@@ -1,10 +1,13 @@
 package petarran.springframework.domain_model;
 
+
 import com.datastax.driver.core.DataType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
+
+
 
 
 import javax.annotation.Generated;
@@ -21,7 +24,7 @@ public class Product implements Serializable{
 
     //TODO id sequence resenje Lukiano pls
     @PrimaryKey
-    @CassandraType(type = DataType.Name.UUID)
+    @CassandraType(type = DataType.Name.INT)
     @Id
     private Integer id;
     private String description;
@@ -64,7 +67,11 @@ public class Product implements Serializable{
     }
 
     public Product() {
-        this.id = new Random().nextInt();
+
+        SafeCounterWithoutLock new_id = new SafeCounterWithoutLock();
+        this.id = new_id.getValue();
+
+
     }
 
     public String getCity() {
