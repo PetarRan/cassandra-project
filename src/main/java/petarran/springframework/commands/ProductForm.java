@@ -2,21 +2,22 @@ package petarran.springframework.commands;
 
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 /**
  *
  */
 public class ProductForm {
-    private Integer id;
+    private UUID id;
     private String description;
     private BigDecimal price;
     private String imageUrl;
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

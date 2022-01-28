@@ -22,11 +22,9 @@ import java.util.UUID;
 @Table("products")
 public class Product implements Serializable{
 
-    //TODO id sequence resenje Lukiano pls
     @PrimaryKey
-    @CassandraType(type = DataType.Name.INT)
-    @Id
-    private Integer id;
+    @CassandraType(type = DataType.Name.UUID)
+    private UUID id;
     private String description;
     private BigDecimal price;
     private String imageUrl;
@@ -34,11 +32,11 @@ public class Product implements Serializable{
     private String country;
     private String continent;
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -67,11 +65,7 @@ public class Product implements Serializable{
     }
 
     public Product() {
-
-        SafeCounterWithoutLock new_id = new SafeCounterWithoutLock();
-        this.id = new_id.getValue();
-
-
+        this.id = UUID.randomUUID();
     }
 
     public String getCity() {

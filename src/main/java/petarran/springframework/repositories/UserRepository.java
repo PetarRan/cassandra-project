@@ -1,7 +1,7 @@
 package petarran.springframework.repositories;
 
-import petarran.springframework.domain_model.Product;
 import org.springframework.data.repository.CrudRepository;
+import petarran.springframework.domain_model.User;
 
 import java.util.UUID;
 
@@ -9,5 +9,6 @@ import java.util.UUID;
 /**
  *
  */
-public interface ProductRepository extends CrudRepository<Product, UUID> {
+public interface UserRepository extends CrudRepository<User, UUID> {
+
 }
