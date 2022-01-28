@@ -1,7 +1,5 @@
 package petarran.springframework.controllers;
 
-import petarran.springframework.commands.ProductForm;
-import petarran.springframework.converters.ProductToProductForm;
 import petarran.springframework.domain_model.Product;
 import petarran.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +19,6 @@ import java.util.UUID;
 @Controller
 public class ProductController {
     private ProductService productService;
-
-    private ProductToProductForm productToProductForm;
-
-    @Autowired
-    public void setProductToProductForm(ProductToProductForm productToProductForm) {
-        this.productToProductForm = productToProductForm;
-    }
 
     @Autowired
     public void setProductService(ProductService productService) {
@@ -54,28 +45,26 @@ public class ProductController {
     @RequestMapping("product/edit/{id}")
     public String edit(@PathVariable String id, Model model){
         Product product = productService.getById(UUID.fromString(id));
-        ProductForm productForm = productToProductForm.convert(product);
 
-        model.addAttribute("productForm", productForm);
         return "product/productform";
     }
 
     @RequestMapping("/product/new")
     public String newProduct(Model model){
-        model.addAttribute("productForm", new ProductForm());
+
         return "product/productform";
     }
 
     @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public String saveOrUpdateProduct(@Valid ProductForm productForm, BindingResult bindingResult){
+    public String saveOrUpdateProduct(){
 
-        if(bindingResult.hasErrors()){
+       // if(bindingResult.hasErrors()){
             return "product/productform";
-        }
+        //}
 
-        Product savedProduct = productService.saveOrUpdateProductForm(productForm);
+        //Product savedProduct = productService.saveOrUpdateProductForm(productForm);
 
-        return "redirect:/product/show/" + savedProduct.getId();
+        //return "redirect:/product/show/" + savedProduct.getId();
     }
 
     @RequestMapping("/product/delete/{id}")

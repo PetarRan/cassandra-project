@@ -6,10 +6,6 @@
 	<groupId>guru.springframework</groupId>
 	<artifactId>spring-boot-cassandra</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<modules>
-		<module>vaadin-frontend</module>
-        <module>vaadin-frontend</module>
-    </modules>
 	<packaging>pom</packaging>
 
 	<name>spring-boot-cassandra</name>
@@ -41,6 +37,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+			<version>3.1.0</version>
 		</dependency>
 	</dependencies>
 

@@ -1,6 +1,5 @@
 package petarran.springframework.services;
 
-import petarran.springframework.commands.ProductForm;
 import petarran.springframework.domain_model.Product;
 
 import java.util.List;
@@ -19,5 +18,5 @@ public interface ProductService {
 
     void delete(UUID id);
 
-    Product saveOrUpdateProductForm(ProductForm productForm);
+    Product saveOrUpdateProductForm();
 }

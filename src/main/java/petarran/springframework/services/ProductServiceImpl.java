@@ -1,7 +1,5 @@
 package petarran.springframework.services;
 
-import petarran.springframework.commands.ProductForm;
-import petarran.springframework.converters.ProductFormToProduct;
 import petarran.springframework.domain_model.Product;
 import petarran.springframework.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +15,12 @@ import java.util.UUID;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository productRepository;
-    private ProductFormToProduct productFormToProduct;
+    ProductRepository productRepository;
+
 
     @Autowired
-    public ProductServiceImpl(ProductRepository productRepository, ProductFormToProduct productFormToProduct) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
-        this.productFormToProduct = productFormToProduct;
     }
 
 
@@ -52,10 +49,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product saveOrUpdateProductForm(ProductForm productForm) {
-        Product savedProduct = saveOrUpdate(productFormToProduct.convert(productForm));
-
-        System.out.println("Saved Product Id: " + savedProduct.getId());
-        return savedProduct;
+    public Product saveOrUpdateProductForm() {
+        return null;
     }
+
 }

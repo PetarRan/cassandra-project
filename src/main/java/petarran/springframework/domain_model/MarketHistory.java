@@ -16,11 +16,20 @@ public class MarketHistory {
     @CassandraType(type = DataType.Name.INT)
     private UUID id;
     private BigDecimal price;
+    private UUID userId;
     private List<Product> productList;
     private String shippingCountry;
     private String shippingAddress;
     private String shippingPostalCode;
     private String shippingCity;
+
+    public UUID getUserId() {
+        return userId;
+    }
+
+    public void setUserId(UUID userId) {
+        this.userId = userId;
+    }
 
     public UUID getId() {
         return id;
