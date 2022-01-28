@@ -17,7 +17,6 @@ public class User implements Serializable {
     private String ime;
     private String prezime;
     private String username;
-    private String password;
     private List<Product> productList;
     private List<Product> productSellList;
 
@@ -61,13 +60,6 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public List<Product> getProductList() {
         return productList;

@@ -1,1 +1,7 @@
-id,ime,prezime,username,password,product_list,producst_sell_list
+id,ime,prezime,username,product_list,producst_sell_list
+16db1ec0-7bd2-4802-aac1-79559b7e6a6a,Ena,Dodic,ena12,,,
+cf34866f-4299-4c3d-b920-032f008a19ad,Luka,Stojadinovic,lukiano1,,
+ada82849-bda5-437f-b339-4d740fb8b681,Petar,Randjelovic,penk2,,
+046df518-10f8-4b2e-8e23-85fddfc37a86,Petar,Randjelovic,penk1,,
+c60eb3c9-4674-4778-9e85-e1f6f3d3077f,Ena,Dodic,ena13,,
+c5421949-d095-4f19-a71d-1d3c69aa8c88,Lukiano,Stojadinovic,lukiano2,,
