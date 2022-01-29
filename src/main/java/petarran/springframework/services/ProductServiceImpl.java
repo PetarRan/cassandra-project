@@ -32,6 +32,38 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getByContinent(String continent) {
+        return productRepository.findAllByContinent(continent);
+    }
+
+    @Override
+    public List<Product> getByCountry(String continent, String country) {
+        return productRepository.findAllByContinentAndCountry(continent, country);
+    }
+
+    @Override
+    public List<Product> getByCity(String continent, String country, String city) {
+        return productRepository.findAllByContinentAndCountryAndCity(continent, country, city);
+    }
+
+    @Override
+    public void update(Product product) {
+        productRepository.save(product);
+    }
+
+    @Override
+    public void save(Product product) {
+        productRepository.save(product);
+    }
+
+    @Override
+    public void deleteProduct(Product product) {
+        //productRepository.deleteProduct(product.getContinent(), product.getCountry(),
+                //product.getCity(), product.getId());
+        productRepository.delete(product);
+    }
+
+    @Override
     public Product getById(UUID id) {
         return productRepository.findById(id).orElse(null);
     }
@@ -46,11 +78,6 @@ public class ProductServiceImpl implements ProductService {
     public void delete(UUID id) {
         productRepository.deleteById(id);
 
-    }
-
-    @Override
-    public Product saveOrUpdateProductForm() {
-        return null;
     }
 
 }

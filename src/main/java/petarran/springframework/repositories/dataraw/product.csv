@@ -1,16 +1,17 @@
 id,description,imageurl,price,city,country,continent
-2eaf7427-3122-4484-b4d7-947558f24e81,T-Shrit - I Love New York,ekfkeofko,12.99,New York,United States of America,North America
-3da97be9-fe44-431b-800d-7420e2b445fc,Tanzania Mug,ekfkeofko,4.99,Dodoma, Tanzania, Africa
-ee4ada44-38a1-4d29-abaa-f9f8e2cd4f8d,Paris Mug,ekfkeofko,9.99,Paris,France,Europe
-7b0060ac-b876-4fbd-af6a-199e04d91e05,Hat - Brussels,ekfkeofko,20.99,Brussels,Belgium,Europe
-4e9279c5-98d0-4daa-8212-1b760dfc3e17,Beherovka 30ml,ekfkeofko,13.49,Prague,Czech Republic,Europe
-276bbaa2-9a37-46c7-a5dc-a028a5ee07c7,Zeleny 30ml,ekfkeofko,13.49,Prague,Czech Republic,Europe
-6bec6850-0f35-41ce-a848-fbd644153782,Prague Castle Magnet,ekfkeofko,5.99,Prague,Czech Republic,Europe
-af16a0b1-1ed0-451e-a382-825154817df4,Karlovy Vary Magnet,ekfkeofko,4.99,Karlovy Vary,Czech Republic,Europe
-03a54e2a-e042-4ddd-b7a7-45f4653762a1,Pillow - Bali Indonesia,ekfkeofko,21.99,Kota Denpasar,Indonesia,Asia
-be138f63-1efb-4e16-8720-6f886bca5881,Pillow - I love Kyoto,ekfkeofko,59.99,Kyoto,Japan,Asia
-46814c3c-8311-4800-843b-c0d2536bacd9,Serbian Traditional Hat,ekfkeofko,14.99,Belgrade,Serbia,Europe
-0c31393a-2e3e-4b46-98d0-0d838a826f3a,Slivovitza 30ml,ekfkeofko,9.99,Nis,Serbia,Europe
-bbba708e-cf70-4c70-852c-5180fcd40a88,Ushanka - Tri-color,ekfkeofko,89.99,Moscow,Russia,Europe
-181789ac-fd82-4030-b131-d6c72da58a05,Pirot Rug - Traditional,jfieffe,699.99,Pirot,Serbia,Europe
-153589ac-dd82-4030-b176-d6c73da58a01,Ushanka,jfieffe,49.99,Ekaterinburg,Asia,Europe
+69c8ca6e-d59b-4247-be94-c760aa357d68,T-Shrit - I Love New York,https://m.media-amazon.com/images/I/713IWTNQe7L._AC_UL1500_.jpg,12.99,New York,United States of America,North America
+fe921ec3-7bcd-4167-ac92-da0a55dce1ad,Tanzania Mug,https://i.pinimg.com/originals/28/14/2d/28142d982a95da029cae071337a85117.jpg,4.99,Dodoma,Tanzania,Africa
+6ed9875f-3709-464f-9182-4e84a55d49f0,Paris Mug,https://boutique.madparis.fr/uploads/photos/353/1588_xl.jpg,9.99,Paris,France,Europe
+00c332f4-114b-40f4-953f-25c5f2abb39d,Shirt - Brussels,https://tshirt-planet.com/image/cache/BELGIUM%20COLLECTION/BRUSSELS/brussels-and-chill-Brown-700x700.jpg,20.99,Brussels,Belgium,Europe
+6ed33105-2f0f-4536-85d9-0cf178d11459,Beherovka 30ml,https://wellenmark.sk/754-large_default/becherovka-38-005l.jpg,13.49,Prague,Czech Republic,Europe
+c8aaafb7-8d72-4423-afda-c35f05899a09,Zeleny 30ml,https://www.wine-searcher.com/images/labels/73/79/10727379.jpg,13.49,Prague,Czech Republic,Europe
+c43cf5cf-b1c1-4c2e-9b28-7ce3d5fa869a,Prague Castle Magnet,https://m.media-amazon.com/images/I/81AiRo1uiOL._AC_SS450_.jpg,5.99,Prague,Czech Republic,Europe
+87c854b9-2c48-4f41-a575-a9cb30ac0376,Karlovy Vary Magnet,https://isouvenirs.cz/wp-content/uploads/2017/09/KM-28.jpg,4.99,Karlovy Vary,Czech Republic,Europe
+58dd18ed-1573-46f8-8295-70d3f72a327c,Pillow - Bali Indonesia,https://i.etsystatic.com/13741139/r/il/ea4bb1/2857137275/il_fullxfull.2857137275_9hvh.jpg,21.99,Kota Denpasar,Indonesia,Asia
+7f3b397f-ea33-43fc-a93d-c65c95ad5417,Pillow - I love Kyoto,https://m.media-amazon.com/images/I/61iHFscZbZL._AC_SX466_.jpg,59.99,Kyoto,Japan,Asia
+47334315-8cc3-4821-92d7-c74367d88279,Serbian Traditional Hat,https://www.oaza-shop.at/shop/images/product_images/original_images/Sajkaca-1.jpg,14.99,Belgrade,Serbia,Europe
+e50f8812-f9bb-4de4-8622-8d6dda3847b4,Slivovitza 70ml,https://www.swisslion-takovo.com/wp-content/uploads/2017/12/sljivovica-700ml.jpg,9.99,Nis,Serbia,Europe
+9d448955-76ef-4b6a-8735-c7eb0d1d85bf,Ushanka - Tri-color,https://cdn.skazka.site/storage/images/products/d6/d613590ebf190876680edbcbf7fab101/1_modal_big_slider.jpg,89.99,Moscow,Russia,Europe
+274920c9-b0a3-45c8-82e5-a3c46ffbe6ec,Pirot Rug - Traditional,https://www.topirot.com/img/blog/cilim.jpg,699.99,Pirot,Serbia,Europe
+9b52f154-f0d1-4111-a82b-3ee2184ca2dc,Traditional Russian Salmon Ikra - From the Urals,https://m.media-amazon.com/images/I/71vrA8DuRYS._SL1500_.jpg,49.99,Ekaterinburg,Russia,Asia
+1198e11f-3123-4b10-a8f8-e882ad97f118,Curitiba Postcard,https://www.canyousendmeapostcard.com/upload/130711_postcard_from_brasil_curitiba_1.jpg,3.99,Curitiba,Brazil,South America

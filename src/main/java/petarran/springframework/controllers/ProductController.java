@@ -1,74 +1,97 @@
 package petarran.springframework.controllers;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import petarran.springframework.domain_model.Product;
 import petarran.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Collection;
 import java.util.UUID;
 
 /**
  *
  */
-@Controller
+@RestController
+@RequestMapping("/admin-api/product")
 public class ProductController {
-    private ProductService productService;
+    private final ProductService productService;
 
-    @Autowired
-    public void setProductService(ProductService productService) {
+    public ProductController(ProductService productService){
         this.productService = productService;
     }
 
-    @RequestMapping("/")
-    public String redirToList(){
-        return "redirect:/product/list";
+    @GetMapping(
+            value = "/getAll"
+            )
+    public Collection<Product> getAll(){
+        return productService.listAll();
     }
 
-    @RequestMapping({"/product/list", "/product"})
-    public String listProducts(Model model){
-        model.addAttribute("products", productService.listAll());
-        return "product/list";
+    @GetMapping(
+            value = "/getByContinent/{continent}"
+    )
+    public Collection<Product> getByContinent(@PathVariable("continent") String continent){
+        return productService.getByContinent(continent);
     }
 
-    @RequestMapping("/product/show/{id}")
-    public String getProduct(@PathVariable String id, Model model){
-        model.addAttribute("product", productService.getById(UUID.fromString(id)));
-        return "product/show";
+    @GetMapping(
+            value = "/getByContinent/{continent}/{country}"
+    )
+    public Collection<Product> getByCountry(@PathVariable("continent") String continent,
+                                            @PathVariable("country") String country){
+        return productService.getByCountry(continent, country);
     }
 
-    @RequestMapping("product/edit/{id}")
-    public String edit(@PathVariable String id, Model model){
-        Product product = productService.getById(UUID.fromString(id));
-
-        return "product/productform";
+    @GetMapping(
+            value = "/getByContinent/{continent}/{country}/{city}"
+    )
+    public Collection<Product> getByContinent(@PathVariable("continent") String continent,
+                                              @PathVariable("country") String country,
+                                              @PathVariable("city") String city){
+        return productService.getByCity(continent, country, city);
     }
 
-    @RequestMapping("/product/new")
-    public String newProduct(Model model){
-
-        return "product/productform";
+    @PostMapping(
+            value = "/addProduct",
+            produces = {"application/json"}
+    )
+    public HttpStatus addProduct(@RequestBody(required = true) Product product) {
+        try {
+            productService.save(product);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
     }
 
-    @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public String saveOrUpdateProduct(){
-
-       // if(bindingResult.hasErrors()){
-            return "product/productform";
-        //}
-
-        //Product savedProduct = productService.saveOrUpdateProductForm(productForm);
-
-        //return "redirect:/product/show/" + savedProduct.getId();
+    @DeleteMapping(
+            value = "/deleteProduct",
+            produces = {"application/json"}
+    )
+    public HttpStatus deleteProduct(@RequestBody(required = true) Product product) {
+        try {
+            productService.deleteProduct(product);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
     }
 
-    @RequestMapping("/product/delete/{id}")
-    public String delete(@PathVariable String id){
-        productService.delete(UUID.fromString(id));
-        return "redirect:/product/list";
+    @PutMapping(
+            value = "/updateProduct",
+            produces = {"application/json"}
+    )
+    public HttpStatus updateProduct(@RequestBody(required = true) Product product) {
+        try {
+            productService.update(product);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
     }
+
 }
