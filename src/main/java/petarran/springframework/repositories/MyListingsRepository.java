@@ -13,15 +13,22 @@ import java.util.UUID;
  *
  */
 public interface MyListingsRepository extends CrudRepository<MyListings, UUID> {
-    @Query("select * from \"products\" where \"continent\"= :continent")
-    List<MyListings> findAllByContinent(@Param("continent") String continent);
 
-    @Query("select * from \"products\" where \"continent\"= :continent and \"country\"= :country")
-    List<MyListings> findAllByContinentAndCountry(@Param("continent")String continent, @Param("country")String country);
+    @Query("select * from \"listings\" where \"userid\"= :userid")
+    List<MyListings> findMyListing(@Param("userid") String userId);
 
-    @Query("select * from \"products\" where \"continent\"= :continent and \"country\"= :country and \"city\"= :city")
-    List<MyListings> findAllByContinentAndCountryAndCity(@Param("continent")String continent,
-                                                      @Param("country")String country, @Param("city")String city);
+    @Query("select * from \"listings\" where \"userid\"= :userid  and \"continent\"= :continent")
+    List<MyListings> findAllByContinent(@Param("userid") String userId, @Param("continent") String continent);
+
+    @Query("select * from \"listings\" where \"userid\"=:userid  and \"continent\"= :continent and \"country\"= :country")
+    List<MyListings> findAllByContinentAndCountry(@Param("userid") String userId,
+                                                  @Param("continent")String continent, @Param("country")String country);
+
+    @Query("select * from \"listings\" where \"userid\"=:userid  and \"continent\"= :continent and \"country\"= :country and \"city\"= :city")
+    List<MyListings> findAllByContinentAndCountryAndCity(@Param("userid") String userId,
+                                                         @Param("continent")String continent,
+                                                         @Param("country")String country,
+                                                         @Param("city")String city);
 
 
 }

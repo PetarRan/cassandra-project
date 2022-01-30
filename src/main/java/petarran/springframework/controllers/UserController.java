@@ -1,12 +1,10 @@
 package petarran.springframework.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import petarran.springframework.domain_model.Product;
 import petarran.springframework.domain_model.User;
-import petarran.springframework.services.CartService;
-import petarran.springframework.services.MyListingsService;
-import petarran.springframework.services.ProductService;
+import petarran.springframework.services.UserService;
 
 import java.util.Collection;
 
@@ -16,14 +14,10 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/admin-api/user-api")
 public class UserController {
-    private final ProductService productService;
-    private final CartService cartService;
-    private final MyListingsService myListingsService;
+    private final UserService userService;
 
-    public UserController(ProductService productService, CartService cartService, MyListingsService myListingsService ){
-        this.productService = productService;
-        this.cartService = cartService;
-        this.myListingsService = myListingsService;
+    public UserController(UserService userService){
+        this.userService = userService;
     }
 
     @GetMapping(
@@ -31,6 +25,26 @@ public class UserController {
             )
     public Collection<User> getAll(){
         return null; //TODO
+    }
+
+    @GetMapping(
+            value = "/getUser/{username}"
+    )
+    public User getUserByUsername(@PathVariable("username")String username){
+        return userService.findByUsername(username);
+    }
+
+    @PostMapping(
+            value = "/addUser",
+            produces = {"application/json"}
+    )
+    public HttpStatus addProduct(@RequestBody(required = true) User user) {
+        try {
+            userService.save(user);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
     }
 
 

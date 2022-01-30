@@ -10,11 +10,14 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<Cart> listAll();
+    List<User> listAll();
+    User findByUsername(String username);
 
     void update(User product);
     void save(User product);
     void deleteProduct(User product);
+
+
 
 
 }

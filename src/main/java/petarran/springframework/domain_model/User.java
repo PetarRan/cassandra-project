@@ -13,4 +13,24 @@ public class User {
     @CassandraType(type = DataType.Name.UUID)
     private UUID id;
     private String userId;
+
+    public User(){
+        this.id = UUID.randomUUID();
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 }

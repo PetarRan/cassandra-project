@@ -12,9 +12,8 @@ public interface CartService {
 
     List<Cart> listAll();
 
-    //void update(Product product);
-    //void save(Product product);
-    //void deleteProduct(Product product);
+    void save(Cart cart);
+
 
 
 }

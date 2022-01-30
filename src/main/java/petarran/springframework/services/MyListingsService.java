@@ -1,6 +1,7 @@
 package petarran.springframework.services;
 
 import petarran.springframework.domain_model.MyListings;
+import petarran.springframework.domain_model.Product;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,9 +15,11 @@ public interface MyListingsService {
 
     List<MyListings> listAll();
 
-    List<MyListings> getByContinent(String continent);
-    List<MyListings> getByCountry(String continent, String country);
-    List<MyListings> getByCity(String continent, String country, String city);
+    List<MyListings> myListAll(String userId);
+
+    List<MyListings> getByContinent(String userId, String continent);
+    List<MyListings> getByCountry(String userId, String continent, String country);
+    List<MyListings> getByCity(String userId, String continent, String country, String city);
 
     void update(MyListings product);
     void save(MyListings product);
@@ -28,4 +31,5 @@ public interface MyListingsService {
 
     void delete(UUID id);
 
+    void saveListing(Product product, String userid);
 }

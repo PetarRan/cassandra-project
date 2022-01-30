@@ -32,4 +32,9 @@ public class CartServiceImpl implements CartService {
     public List<Cart> listAll() {
         return null;
     }
+
+    @Override
+    public void save(Cart cart) {
+        cartRepository.save(cart);
+    }
 }

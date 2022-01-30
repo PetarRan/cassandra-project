@@ -17,5 +17,8 @@ public interface CartRepository extends CrudRepository<Cart, UUID> {
     @Query("select * from \"cart\" where \"userid\"= :userId")
     List<Cart> findAllByUserId(@Param("userId") String userId);
 
+    @Query("select * from \"cart\" where \"userid\"= :userId and \"id\"= :id")
+    Cart findByUserIdAndId(@Param("userid")String userId, @Param("id")UUID uuid);
+
 
 }

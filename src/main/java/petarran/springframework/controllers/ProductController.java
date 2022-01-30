@@ -1,16 +1,14 @@
 package petarran.springframework.controllers;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import petarran.springframework.domain_model.Product;
+import petarran.springframework.services.MyListingsService;
 import petarran.springframework.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 
+import javax.validation.Valid;
 import java.util.Collection;
-import java.util.UUID;
 
 /**
  *
@@ -19,9 +17,11 @@ import java.util.UUID;
 @RequestMapping("/admin-api/product")
 public class ProductController {
     private final ProductService productService;
+    private final MyListingsService myListingsService;
 
-    public ProductController(ProductService productService){
+    public ProductController(ProductService productService, MyListingsService myListingsService){
         this.productService = productService;
+        this.myListingsService = myListingsService;
     }
 
     @GetMapping(
@@ -59,9 +59,10 @@ public class ProductController {
             value = "/addProduct",
             produces = {"application/json"}
     )
-    public HttpStatus addProduct(@RequestBody(required = true) Product product) {
+    public HttpStatus addProduct(@Valid @RequestBody(required = true) Product product, @RequestParam("userid") String userid) {
         try {
             productService.save(product);
+            myListingsService.saveListing(product, userid);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
