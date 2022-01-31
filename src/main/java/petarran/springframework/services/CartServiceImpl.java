@@ -8,6 +8,7 @@ import petarran.springframework.repositories.CartRepository;
 import petarran.springframework.repositories.ProductRepository;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,6 +36,22 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public void save(Cart cart) {
-        cartRepository.save(cart);
+        cartRepository.saveCartItem(cart.getUserId(), cart.getId(), cart.getDescription(), cart.getLocation(),
+                cart.getPrice());
+    }
+
+    @Override
+    public Collection<Cart> findByUserId(String userid) {
+        return cartRepository.findAllByUserId(userid);
+    }
+
+    @Override
+    public void delete(Cart cart) {
+        cartRepository.delete(cart);
+    }
+
+    @Override
+    public void deleteAll(String userid) {
+        cartRepository.deleteAllByUser(userid);
     }
 }

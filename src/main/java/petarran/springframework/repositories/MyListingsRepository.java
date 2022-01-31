@@ -31,4 +31,15 @@ public interface MyListingsRepository extends CrudRepository<MyListings, UUID> {
                                                          @Param("city")String city);
 
 
+    @Query("delete from \"listings\" where \"userid\"=:userid and \"continent\"= :continent and \"country\"= :country and \"city\"= :city")
+    void deleteSmart(@Param("userid")String userId,
+                     @Param("continent")String continent,
+                     @Param("country")String country,
+                     @Param("city")String city);
+
+    @Query("select * from \"listings\" where \"userid\"=:userid and \"continent\"= :continent and \"country\"= :country and \"city\"= :city and \"id\"= :id")
+    MyListings findByCode(@Param("userid")String userId,
+                    @Param("continent")String continent,
+                    @Param("country")String country,
+                    @Param("city")String city, @Param("id")UUID id);
 }

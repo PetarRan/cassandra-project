@@ -47,6 +47,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public Product getByCode(String continent, String country, String city, String id) {
+        UUID uuid = UUID.fromString(id);
+        return productRepository.findByCode(continent, country, city, uuid);
+    }
+
+    @Override
     public void update(Product product) {
         productRepository.save(product);
     }
@@ -61,6 +67,13 @@ public class ProductServiceImpl implements ProductService {
         //productRepository.deleteProduct(product.getContinent(), product.getCountry(),
                 //product.getCity(), product.getId());
         productRepository.delete(product);
+    }
+
+    @Override
+    public void deleteSmart(String continent, String country, String city, String id) {
+        UUID uuid = UUID.fromString(id);
+        productRepository.deleteSmart(continent, country, city, uuid);
+
     }
 
     @Override

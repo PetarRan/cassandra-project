@@ -8,6 +8,7 @@ import petarran.springframework.services.MyListingsService;
 import petarran.springframework.services.ProductService;
 
 import java.util.Collection;
+import java.util.UUID;
 
 /**
  *
@@ -55,9 +56,20 @@ public class MyListingsController {
     }
 
     @GetMapping(
-            value = "/getByContinent/{userid}/{continent}/{country}/{city}"
+            value = "/getByCode/{userid}/{continent}/{country}/{city}/{id}"
     )
-    public Collection<MyListings> getByContinent(@PathVariable("userid")String userid,
+    public MyListings getByCode(@PathVariable("userid")String userid,
+                                            @PathVariable("continent") String continent,
+                                            @PathVariable("country") String country,
+                                            @PathVariable("city") String city,
+                                            @PathVariable("id")String id){
+        return myListingsService.findByCode(userid, continent, country, city, id);
+    }
+
+    @GetMapping(
+            value = "/getByCity/{userid}/{continent}/{country}/{city}"
+    )
+    public Collection<MyListings> getByCity(@PathVariable("userid")String userid,
                                                  @PathVariable("continent") String continent,
                                               @PathVariable("country") String country,
                                               @PathVariable("city") String city){
@@ -68,9 +80,22 @@ public class MyListingsController {
             value = "/deleteListing",
             produces = {"application/json"}
     )
-    public HttpStatus deleteFirma(@RequestBody(required = true) MyListings myListing) {
+    public HttpStatus deleteListing(@RequestBody(required = true) MyListings myListing) {
         try {
-            myListingsService.deleteProduct(myListing);
+            myListingsService.deleteListing(myListing);
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
+    }
+
+    @PutMapping(
+            value = "/updateListing",
+            produces = {"application/json"}
+    )
+    public HttpStatus updateListing(@RequestBody(required = true) MyListings myListing) {
+        try {
+            myListingsService.update(myListing);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }

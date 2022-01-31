@@ -2,6 +2,7 @@ package petarran.springframework.services;
 
 import petarran.springframework.domain_model.Product;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,10 +21,13 @@ public interface ProductService {
     void save(Product product);
     void deleteProduct(Product product);
 
+    void deleteSmart(String continent, String country, String city, String id);
+
+    Product getByCode(String continent, String country, String city, String id);
+
     Product getById(UUID id);
 
     Product saveOrUpdate(Product product);
 
     void delete(UUID id);
-
 }

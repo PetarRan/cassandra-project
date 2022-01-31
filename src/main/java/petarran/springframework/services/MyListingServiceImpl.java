@@ -40,7 +40,8 @@ public class MyListingServiceImpl implements MyListingsService {
 
     @Override
     public List<MyListings> myListAll(String userId) {
-        return myListingsRepository.findMyListing(userId);
+        return  myListingsRepository.findMyListing(userId);
+
     }
 
     @Override
@@ -69,8 +70,28 @@ public class MyListingServiceImpl implements MyListingsService {
     }
 
     @Override
-    public void deleteProduct(MyListings product) {
+    public void deleteListing(MyListings product) {
         myListingsRepository.delete(product);
+    }
+
+    @Override
+    public void deleteSmart(String userId, String continent, String country, String city) {
+        myListingsRepository.deleteSmart(userId,continent,country,city);
+    }
+
+    @Override
+    public MyListings findByCode(String userId, String continent, String country, String city, String id) {
+        UUID uuid = UUID.fromString(id);
+        return myListingsRepository.findByCode(userId, continent, country, city, uuid);
+    }
+
+    @Override
+    public void updateSmart(Product product, String userId) {
+        MyListings myListings = myListingsRepository.findByCode(userId, product.getContinent(),
+                product.getCountry(), product.getCity(), product.getId());
+        myListings.setDescription(product.getDescription());
+        myListings.setPrice(product.getPrice());
+        myListingsRepository.save(myListings);
     }
 
     @Override
@@ -85,19 +106,21 @@ public class MyListingServiceImpl implements MyListingsService {
 
     @Override
     public void delete(UUID id) {
-
+        myListingsRepository.deleteById(id);
     }
 
     @Override
     public void saveListing(Product product, String userid) {
         MyListings myListings = new MyListings();
 
+        myListings.setId(product.getId());
         myListings.setCity(product.getCity());
         myListings.setContinent(product.getContinent());
         myListings.setCountry(product.getCountry());
         myListings.setDescription(product.getDescription());
         myListings.setImageUrl(product.getImageUrl());
         myListings.setUserId(userid);
+        myListings.setPrice(product.getPrice());
         myListingsRepository.save(myListings);
 
     }

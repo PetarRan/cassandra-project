@@ -1,5 +1,6 @@
 package petarran.springframework.services;
 
+import org.springframework.data.repository.query.Param;
 import petarran.springframework.domain_model.MyListings;
 import petarran.springframework.domain_model.Product;
 
@@ -23,7 +24,14 @@ public interface MyListingsService {
 
     void update(MyListings product);
     void save(MyListings product);
-    void deleteProduct(MyListings product);
+    void deleteListing(MyListings product);
+
+    void deleteSmart(String userId, String continent, String country, String city);
+
+    MyListings findByCode(String userId, String continent, String country,
+                         String city, String id);
+
+    void updateSmart(Product product, String userId);
 
     MyListings getById(UUID id);
 
