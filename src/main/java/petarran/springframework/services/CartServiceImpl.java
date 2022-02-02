@@ -54,4 +54,10 @@ public class CartServiceImpl implements CartService {
     public void deleteAll(String userid) {
         cartRepository.deleteAllByUser(userid);
     }
+
+    @Override
+    public void addToCart(Cart cart) {
+        cartRepository.saveCartItem(cart.getUserId(), cart.getId(), cart.getDescription(), cart.getLocation(),
+                cart.getPrice());
+    }
 }

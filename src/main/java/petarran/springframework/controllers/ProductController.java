@@ -121,7 +121,7 @@ public class ProductController {
     )
     public HttpStatus addToCart(@Valid @RequestBody(required = true) Cart cart) {
         try {
-            cartService.save(cart);
+            cartService.addToCart(cart);
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }
@@ -143,6 +143,20 @@ public class ProductController {
         try {
             cartService.deleteAll(userid);
 
+        } catch (RuntimeException e) {
+            return HttpStatus.BAD_REQUEST;
+        }
+        return HttpStatus.ACCEPTED;
+    }
+
+    @DeleteMapping(
+            value = "/deleteFromCatalog",
+            produces = {"application/json"}
+    )
+    public HttpStatus deleteFromCatalog(@Valid @RequestBody(required = true) Product product) {
+        try {
+            productService.deleteSmart(product.getContinent(), product.getCountry(), product.getCity(),
+                    product.getId().toString());
         } catch (RuntimeException e) {
             return HttpStatus.BAD_REQUEST;
         }

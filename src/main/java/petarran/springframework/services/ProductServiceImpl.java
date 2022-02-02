@@ -64,8 +64,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProduct(Product product) {
-        //productRepository.deleteProduct(product.getContinent(), product.getCountry(),
-                //product.getCity(), product.getId());
+
         productRepository.delete(product);
     }
 

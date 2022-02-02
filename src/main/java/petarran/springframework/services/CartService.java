@@ -22,4 +22,6 @@ public interface CartService {
     void delete(Cart cart);
 
     void deleteAll(String userid);
+
+    void addToCart(Cart cart);
 }
