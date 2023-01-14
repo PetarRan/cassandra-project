@@ -1,10 +1,4 @@
-# Cassandra-Project
-
-| **Tech Choice 1** | **Tech Choice 2** | **IDE** | **DataBase** |
-| --- | --- | --- | --- |
-| ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) | ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) | ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white) | ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) | ![ApacheCassandra](https://img.shields.io/badge/cassandra-%231287B1.svg?style=for-the-badge&logo=apache-cassandra&logoColor=white) |
-
-# Souvenir Shop
+# Souvenir Shop (CassandraDB)
 
 This is a web application built using Spring Boot and Cassandra as the database. The main focus of the project is to showcase the ability of Cassandra's clustering and partitioning keys in handling large amounts of data.
 
@@ -63,4 +57,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 
 #### Note
 Make sure you fill the appropriate details and also update the readme as per your project requirements.
+
+
+| **Tech Choice 1** | **Tech Choice 2** | **IDE** | **DataBase** |
+| --- | --- | --- | --- |
+| ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) | ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) | ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white) | ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) | ![ApacheCassandra](https://img.shields.io/badge/cassandra-%231287B1.svg?style=for-the-badge&logo=apache-cassandra&logoColor=white) |
 
