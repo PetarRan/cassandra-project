@@ -37,13 +37,13 @@ This is a web application built using Spring Boot and Cassandra as the database.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/PetarRan/cassandra-projec/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/PetarRan/cassandra-project/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
 - **Petar Randjelovic** - [PetarRan](https://github.com/PetarRan)
 
-See also the list of [contributors]https://github.com/PetarRan/cassandra-projec/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/PetarRan/cassandra-project/contributors) who participated in this project.
 
 ## License
 
