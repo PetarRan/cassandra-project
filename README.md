@@ -2,6 +2,8 @@
 
 ![image](https://user-images.githubusercontent.com/70757499/216840726-5a6609da-6182-43f7-af32-2a1c38f9d627.png)
 
+### To view the frontend of this project, please refer to this [link](https://github.com/PetarRan/cassandra-frontend)
+
 This is a web application built using Spring Boot and Cassandra as the database. The main focus of the project is to showcase the ability of Cassandra's clustering and partitioning keys in handling large amounts of data.
 
 ## Features
